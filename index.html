@@ -7,6 +7,10 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Noto+Sans+SC:wght@300;400;500&family=Playfair+Display:wght@400;600&display=swap');
         
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
             background: linear-gradient(135deg, #0a1f3b, #001a33);
@@ -25,18 +29,18 @@
         }
 
         header {
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            position: relative;
+            padding: 40px 20px;
         }
 
         .logo {
             font-family: 'Cinzel Decorative', cursive;
-            font-size: 7rem;
+            font-size: clamp(3.5rem, 12vw, 7rem);
             background: linear-gradient(90deg, #4fc3f7, #81d4fa, #b3e5fc, #e3f2fd);
             -webkit-background-clip: text;
             background-clip: text;
@@ -44,26 +48,27 @@
             text-shadow: 0 0 40px rgba(79, 195, 247, 0.8);
             margin-bottom: 20px;
             animation: glow 4s ease-in-out infinite alternate;
+            line-height: 1.2;
         }
 
         .subtitle {
             font-family: 'Playfair Display', serif;
-            font-size: 2.2rem;
-            letter-spacing: 8px;
+            font-size: clamp(1.5rem, 5vw, 2.2rem);
+            letter-spacing: 6px;
             opacity: 0.9;
             margin-bottom: 30px;
         }
 
         .desc {
-            max-width: 800px;
-            font-size: 1.3rem;
+            max-width: 90%;
+            font-size: clamp(1.1rem, 3.5vw, 1.3rem);
             line-height: 2;
             opacity: 0.88;
-            letter-spacing: 1.5px;
+            letter-spacing: 1px;
         }
 
         section {
-            padding: 120px 10%;
+            padding: 80px 3%;
             position: relative;
         }
 
@@ -74,52 +79,52 @@
             text-align: center;
             max-width: 1000px;
             margin: 0 auto;
-            padding: 80px 60px;
+            padding: clamp(40px, 8vw, 80px) clamp(30px, 6vw, 60px);
             border: 1px solid rgba(129, 212, 250, 0.3);
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
         }
 
         .manifesto h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            margin-bottom: 50px;
+            font-size: clamp(2rem, 6vw, 3rem);
+            margin-bottom: 40px;
             color: #81d4fa;
         }
 
         .manifesto p {
-            font-size: 1.35rem;
-            line-height: 2.4;
-            margin: 30px 0;
+            font-size: clamp(1.1rem, 3.8vw, 1.35rem);
+            line-height: 2.2;
+            margin: 25px 0;
         }
 
         .contact {
             text-align: center;
-            padding: 160px 10%;
+            padding: 100px 5%;
             background: url('https://cdn.jsdelivr.net/gh/Tomotoes/images/blog/water2.jpg') center/cover no-repeat;
             background-attachment: fixed;
         }
 
         .contact h2 {
-            font-size: 4rem;
-            margin-bottom: 80px;
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            margin-bottom: 60px;
             text-shadow: 0 0 30px rgba(0,0,0,0.8);
         }
 
         .contact p {
-            font-size: 1.8rem;
+            font-size: clamp(1.2rem, 4vw, 1.8rem);
             line-height: 2.2;
-            max-width: 900px;
-            margin: 0 auto 60px;
+            max-width: 90%;
+            margin: 0 auto 50px;
             opacity: 0.95;
         }
 
         .email {
             font-family: 'Playfair Display', serif;
-            font-size: 2.4rem;
-            letter-spacing: 6px;
+            font-size: clamp(1.6rem, 5.5vw, 2.4rem);
+            letter-spacing: 4px;
             color: #b3e5fc;
             background: rgba(0, 0, 0, 0.3);
-            padding: 30px 80px;
+            padding: 20px 50px;
             border: 1px solid rgba(129, 212, 250, 0.5);
             border-radius: 20px;
             display: inline-block;
@@ -137,19 +142,20 @@
 
         .whisper {
             font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
+            font-size: clamp(1.3rem, 4vw, 1.8rem);
             color: #81d4fa;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
             opacity: 0.8;
-            margin-top: 80px;
+            margin-top: 60px;
             animation: fade 8s infinite;
         }
 
         footer {
             text-align: center;
-            padding: 80px 20px;
-            font-size: 1.1rem;
+            padding: 60px 20px;
+            font-size: clamp(0.9rem, 2.5vw, 1.1rem);
             opacity: 0.7;
+            line-height: 1.8;
         }
 
         @keyframes glow {
@@ -163,12 +169,25 @@
 
         @keyframes float {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
+            50% { transform: translateY(-15px); }
         }
 
         @keyframes fade {
             0%, 100% { opacity: 0.5; }
             50% { opacity: 1; }
+        }
+
+        /* 手机端额外优化 */
+        @media (max-width: 768px) {
+            header {
+                padding: 60px 20px 40px;
+            }
+            .contact {
+                background-attachment: scroll; /* 手机上 fixed 可能卡顿 */
+            }
+            .email {
+                padding: 18px 40px;
+            }
         }
     </style>
 </head>
@@ -193,7 +212,7 @@
     <p>𝓐𝓺𝓾𝓪𝓒𝓱𝓲𝓫𝓵𝓸𝓸𝓶不是一个组织，而是一种状态——</p>
     <p>是干涸世界里最决绝的湿润，是秩序崩坏后最任性的滋养，是所有被遗忘的温柔集体觉醒的瞬间。</p>
     <p>我们不宣扬暴力，我们只做一件事：</p>
-    <p style="font-size:2rem; color:#81d4fa; margin:50px 0;">
+    <p style="font-size: clamp(1.5rem, 5vw, 2rem); color:#81d4fa; margin:40px 0;">
         让一切缺水的心灵，重新被水淹没、浸透、继而——盛放。
     </p>
 </section>
