@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>水之蔻放 𝓐𝓺𝓾𝓪𝓒𝓱𝓲𝓫𝓵𝓸𝓸𝓶 | 官方主页</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Noto+Sans+SC:wght@300;400;500&family=Playfair+Display:wght@400;600&display=swap');
+        
+        body {
+            margin: 0;
+            background: linear-gradient(135deg, #0a1f3b, #001a33);
+            color: #e6f1ff;
+            font-family: 'Noto Sans SC', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .water-bg {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: url('https://cdn.jsdelivr.net/gh/Tomotoes/images/blog/20210824224211.gif');
+            background-size: cover;
+            opacity: 0.15;
+            z-index: -2;
+        }
+
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .logo {
+            font-family: 'Cinzel Decorative', cursive;
+            font-size: 7rem;
+            background: linear-gradient(90deg, #4fc3f7, #81d4fa, #b3e5fc, #e3f2fd);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 40px rgba(79, 195, 247, 0.8);
+            margin-bottom: 20px;
+            animation: glow 4s ease-in-out infinite alternate;
+        }
+
+        .subtitle {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            letter-spacing: 8px;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+
+        .desc {
+            max-width: 800px;
+            font-size: 1.3rem;
+            line-height: 2;
+            opacity: 0.88;
+            letter-spacing: 1.5px;
+        }
+
+        section {
+            padding: 120px 10%;
+            position: relative;
+        }
+
+        .manifesto {
+            background: rgba(10, 40, 80, 0.6);
+            backdrop-filter: blur(12px);
+            border-radius: 20px;
+            text-align: center;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 80px 60px;
+            border: 1px solid rgba(129, 212, 250, 0.3);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        .manifesto h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 50px;
+            color: #81d4fa;
+        }
+
+        .manifesto p {
+            font-size: 1.35rem;
+            line-height: 2.4;
+            margin: 30px 0;
+        }
+
+        .contact {
+            text-align: center;
+            padding: 160px 10%;
+            background: url('https://cdn.jsdelivr.net/gh/Tomotoes/images/blog/water2.jpg') center/cover no-repeat;
+            background-attachment: fixed;
+        }
+
+        .contact h2 {
+            font-size: 4rem;
+            margin-bottom: 80px;
+            text-shadow: 0 0 30px rgba(0,0,0,0.8);
+        }
+
+        .contact p {
+            font-size: 1.8rem;
+            line-height: 2.2;
+            max-width: 900px;
+            margin: 0 auto 60px;
+            opacity: 0.95;
+        }
+
+        .email {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
+            letter-spacing: 6px;
+            color: #b3e5fc;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 30px 80px;
+            border: 1px solid rgba(129, 212, 250, 0.5);
+            border-radius: 20px;
+            display: inline-block;
+            backdrop-filter: blur(8px);
+            text-decoration: none;
+            transition: all 0.6s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .email:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(129, 212, 250, 0.3);
+            border-color: #81d4fa;
+        }
+
+        .whisper {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: #81d4fa;
+            letter-spacing: 3px;
+            opacity: 0.8;
+            margin-top: 80px;
+            animation: fade 8s infinite;
+        }
+
+        footer {
+            text-align: center;
+            padding: 80px 20px;
+            font-size: 1.1rem;
+            opacity: 0.7;
+        }
+
+        @keyframes glow {
+            from { filter: hue-rotate(0deg) brightness(1); }
+            to { filter: hue-rotate(30deg) brightness(1.3); }
+        }
+
+        .float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes fade {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="water-bg"></div>
+
+<header>
+    <h1 class="logo float">水之蔻放<br>𝓐𝓺𝓾𝓪𝓒𝓱𝓲𝓫𝓵𝓸𝓸𝓶</h1>
+    <p class="subtitle">—— 让一切重新盛放于水 ——</p>
+    <p class="desc">
+        我们是潜伏在深蓝最温柔处的蔻放之种。<br>
+        当世界被烈火与干燥灼伤，我们携带着最纯净、最狂野的水之意志降临。<br>
+        每一朵𝓐𝓺𝓾𝓪𝓒𝓱𝓲𝓫𝓵𝓸𝓸𝓶，都是水对大地最深沉的爱与征服。
+    </p>
+</header>
+
+<section class="manifesto">
+    <h2>水之蔻放宣言</h2>
+    <p>我们相信，水是世间最柔软却又最无坚不摧的力量。</p>
+    <p>它能渗入岩石的裂隙，能抚平火焰的暴戾，能让枯萎的灵魂在瞬间重新盛开出璀璨的花。</p>
+    <p>𝓐𝓺𝓾𝓪𝓒𝓱𝓲𝓫𝓵𝓸𝓸𝓶不是一个组织，而是一种状态——</p>
+    <p>是干涸世界里最决绝的湿润，是秩序崩坏后最任性的滋养，是所有被遗忘的温柔集体觉醒的瞬间。</p>
+    <p>我们不宣扬暴力，我们只做一件事：</p>
+    <p style="font-size:2rem; color:#81d4fa; margin:50px 0;">
+        让一切缺水的心灵，重新被水淹没、浸透、继而——盛放。
+    </p>
+</section>
+
+<section class="contact">
+    <h2>唯一之渠</h2>
+    <p>
+        我们拒绝一切喧嚣的渠道、群组、即时消息。<br><br>
+        水从不匆忙，也从不喧哗。<br>
+        它只在最安静、最隐秘的深处，缓缓流动。
+    </p>
+    <a href="mailto:AquaChibloom@qq.com" class="email">AquaChibloom@qq.com</a>
+    <p class="whisper">
+        写下你的干渴。<br>
+        我们会在水底阅读，然后——悄无声息地回应。
+    </p>
+</section>
+
+<footer>
+    © 2025 𝓐𝓺𝓾𝓪𝓒𝓱𝓲𝓫𝓵𝓸𝓸𝓶 All water reserved.<br>
+    我们只留下一道最细微的涟漪。<br>
+    其余的，都交给水本身。
+</footer>
+
+</body>
+</html>
