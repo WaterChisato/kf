@@ -118,31 +118,55 @@
             opacity: 0.95;
         }
 
-        .email {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(1.6rem, 5.5vw, 2.4rem);
-            letter-spacing: 4px;
-            color: #b3e5fc;
-            background: rgba(0, 0, 0, 0.3);
-            padding: 20px 50px;
-            border: 1px solid rgba(129, 212, 250, 0.5);
-            border-radius: 20px;
-            display: inline-block;
-            backdrop-filter: blur(8px);
-            text-decoration: none;
-            transition: all 0.6s ease;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        /* 新邮箱设计：更自然、更隐秘、更手机友好 */
+        .email-container {
+            margin: 40px auto;
+            max-width: 90%;
         }
 
-        .email:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 50px rgba(129, 212, 250, 0.3);
-            border-color: #81d4fa;
+        .email-reveal {
+            display: inline-block;
+            padding: 16px 40px;
+            background: rgba(0, 0, 0, 0.25);
+            border: 1px dashed rgba(129, 212, 250, 0.25);
+            border-radius: 30px;
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.1rem, 3.8vw, 1.6rem);
+            letter-spacing: 3px;
+            color: rgba(129, 212, 250, 0.4);
+            backdrop-filter: blur(8px);
+            transition: all 1.5s ease;
+            cursor: pointer;
+        }
+
+        .email-reveal:hover {
+            background: rgba(0, 0, 0, 0.45);
+            border-color: rgba(129, 212, 250, 0.7);
+            color: #b3e5fc;
+            box-shadow: 0 0 35px rgba(129, 212, 250, 0.4);
+        }
+
+        .email-reveal span {
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+
+        .email-reveal:hover span {
+            opacity: 1;
+        }
+
+        .email-reveal::before {
+            content: "———";
+            letter-spacing: 12px;
+        }
+
+        .email-reveal:hover::before {
+            content: none;
         }
 
         .whisper {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(1.3rem, 4vw, 1.8rem);
+            font-size: clamp(1.2rem, 3.8vw, 1.6rem);
             color: #81d4fa;
             letter-spacing: 2px;
             opacity: 0.8;
@@ -152,10 +176,35 @@
 
         footer {
             text-align: center;
-            padding: 60px 20px;
+            padding: 60px 20px 40px;
             font-size: clamp(0.9rem, 2.5vw, 1.1rem);
             opacity: 0.7;
-            line-height: 1.8;
+            line-height: 2;
+        }
+
+        .beian {
+            margin-top: 50px;
+            opacity: 0;
+            font-size: clamp(0.75rem, 1.8vw, 0.9rem);
+            transition: opacity 1s ease;
+        }
+
+        footer:hover .beian {
+            opacity: 0.45;
+        }
+
+        .beian a {
+            color: #81d4fa;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .beian img {
+            height: 16px;
+            vertical-align: middle;
+            opacity: 0.8;
         }
 
         @keyframes glow {
@@ -177,16 +226,15 @@
             50% { opacity: 1; }
         }
 
-        /* 手机端额外优化 */
         @media (max-width: 768px) {
             header {
                 padding: 60px 20px 40px;
             }
             .contact {
-                background-attachment: scroll; /* 手机上 fixed 可能卡顿 */
+                background-attachment: scroll;
             }
-            .email {
-                padding: 18px 40px;
+            .email-reveal {
+                padding: 14px 30px;
             }
         }
     </style>
@@ -224,10 +272,16 @@
         水从不匆忙，也从不喧哗。<br>
         它只在最安静、最隐秘的深处，缓缓流动。
     </p>
-    <a href="mailto:AquaChibloom@qq.com" class="email">AquaChibloom@qq.com</a>
+    
+    <div class="email-container">
+        <a href="mailto:AquaChibloom@qq.com" class="email-reveal">
+            <span>AquaChibloom@qq.com</span>
+        </a>
+    </div>
+    
     <p class="whisper">
-        写下你的干渴。<br>
-        我们会在水底阅读，然后——悄无声息地回应。
+        将光标停留此处。<br>
+        水会自己显形。
     </p>
 </section>
 
@@ -235,6 +289,12 @@
     © 2025 𝓐𝓺𝓾𝓪𝓒𝓱𝓲𝓫𝓵𝓸𝓸𝓶 All water reserved.<br>
     我们只留下一道最细微的涟漪。<br>
     其余的，都交给水本身。
+    <div class="beian">
+        <a href="https://icp.redcha.cn/beian/ICP-2025120263.html">
+            <img src="https://icp.redcha.cn/static/picture/icplogoi.png" alt="ICP备案">
+            茶ICP备2025120263号
+        </a>
+    </div>
 </footer>
 
 </body>
