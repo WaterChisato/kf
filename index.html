@@ -274,16 +274,42 @@
         它只在最安静、最隐秘的深处，缓缓流动。
     </p>
     
-    <div class="email-container">
-        <a href="mailto:AquaChibloom@qq.com" class="email-reveal">
-            <span>AquaChibloom@qq.com</span>
-        </a>
-    </div>
-    
-    <p class="whisper">
-        将光标停留此处。<br>
-        水会自己显形。
-    </p>
+<div class="email-container">
+    <a id="contact-link" class="email-reveal">
+        <span id="contact-text"></span>
+    </a>
+</div>
+
+<p class="whisper" id="whisper-text">
+    将光标停留此处。<br>
+    水会自己显形。
+</p>
+
+<script>
+    function updateContact() {
+        const now = new Date();
+        const hour = now.getHours();
+        const link = document.getElementById("contact-link");
+        const text = document.getElementById("contact-text");
+        const whisper = document.getElementById("whisper-text");
+
+        if (hour >= 22 || hour < 6) {
+            // 夜间模式：漂流瓶
+            link.href = "http://漂流瓶.waterchisato.top";
+            text.textContent = "进入漂流瓶";
+            whisper.innerHTML = "在夜的水域里，<br>漂流瓶会自己显形。";
+        } else {
+            // 白天模式：邮箱
+            link.href = "mailto:AquaChibloom@qq.com";
+            text.textContent = "AquaChibloom@qq.com";
+            whisper.innerHTML = "将光标停留此处。<br>水会自己显形。";
+        }
+    }
+
+    updateContact();
+    // 每隔一分钟检查一次，避免跨时段不更新
+    setInterval(updateContact, 60000);
+</script>
 </section>
 
 <footer>
